@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  
+  <script>
+   
+    const Product={
+      name :'socks',
+      prize : 2000,
+      'delivary-time ': '1 day',
+      rating :{
+        stars :4.5,
+        count :85
+      },
+      fun : function function1(){
+        console.log('function inside an object');
+      }
+
+
+    };
+    console.log(Product);
+    console.log(Product.name);
+  
+
+
+
+
+    //console.log(Product.delivary-time);
+    //dot notation gives us error
+
+
+
+    console.log(Product['delivery-time']);
+
+
+
+
+
+    //bracket notation works here
+    //function inside object is method
+
+
+
+  
+    Product.fun();
+    console.log(typeof Product);
+    console.log(typeof console.log);
+
+    console.log(Product.rating.count);
+    Product.name= 'cotton socks';
+    console.log(Product);
+
+    Product.newproperty =true;
+    console.log(Product);
+
+    delete Product.newproperty;
+    console.log(Product);
+
+
+    console.log(JSON.stringify(Product));
+  
+
+
+
+
+    //objects make our code more organised 
+    //allow use multiple values
+
+
+    //cosole and math objects are builtin objects
+    //json and localstorage are also builtin object 
+
+    /*Javascript Object Notation 
+    a syntax 
+    similar to javascript objects
+    and has less features 
+    JSON does not supports single quotes and functions*/
+
+
+    //convert json to javascript
+
+
+    
+    const jsonstring = JSON.stringify(Product);
+    console.log(JSON.parse(jsonstring));
+  
+
+
+    //localstrage saves the values more permanently
+    //it can only store strings
+
+
+
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+
+    const object1={
+      message:'hello'
+    };
+    const object2= object1;
+    object1.message='Good job!';
+    console.log(object1);
+    
+    //here we use const but can chenge msg because it make sure to keep the reference constant not msg
+    // we cannot compare objects directly
+
+
+    const object3={
+      message:'Good job!'
+    };
+    console.log(object3===object1);
+    //here it check references
+    console.log(object2===object1);
+
+
+    const object4={
+      message:'Good job!',
+      price:799
+    };
+    //if we wnt to take msg out 
+    //const message =object4.message;
+    //this only can be written as -destructive property
+    const { message,price } =object4;
+    console.log(message);
+    console.log(price);
+
+
+    const object5={
+      message,
+      //method: function function1(){
+      //  console.log('method')
+      //}
+      method(){
+        console.log('method')
+      }
+    };
+    console.log(object5);
+    object5.method();
+
+  </script>
+
+</body>
+</html>
